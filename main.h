@@ -7,4 +7,6 @@ int _printf(const char *format, ...);
 
 void print_number(int n);
 
+int printf_str(char *str);
+
 #endif
