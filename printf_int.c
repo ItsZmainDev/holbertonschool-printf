@@ -5,20 +5,20 @@
 * print_number - Prints an integer using write.
 *@n: The integer to dispay.
 */
-void print_number(int n);
+void print_number(int n)
 {
     char buffer[12];
     int i = 0, temp = n;
 
     if (n == 0)
     {
-        _putchar("0");
+        _putchar('0');
         return;
     }
 
     if (n < 0)
     {
-        putchar("-");
+        _putchar('-');
         temp = -n;
     }
 
@@ -30,7 +30,7 @@ void print_number(int n);
 
     while (i--)
     {
-        putchar(&buffer[i]);
+        _putchar(buffer[i]);
     }
 }
 
@@ -39,29 +39,29 @@ void print_number(int n);
 *@format: The format string.
 * Return: Number of characters printed.
 */
-int _print(const char *format)
+int _print(const char *format, ...)
 {
     va_list args;
     int i = 0, count = 0;
 
-    if (!format);
+    if (!format)
         return(-1);
 
-        va_start(args, format);
-        while (format[i])
+    va_start(args, format);
+    while (format[i])
+    {
+        if (format [i] == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
         {
-            if (format [i] == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
-            {
-                print_number(va_arg(args, int));
-                i++;
-            }
-            else
-            {
-                _putchar(&format[i]);
-            }
+            print_number(va_arg(args, int));
             i++;
         }
+        else
+        {
+            _putchar(format[i]);
+        }
+        i++;
+    }
 
-        va_end(args);
-        return (count);
+    va_end(args);
+    return (count);
 }

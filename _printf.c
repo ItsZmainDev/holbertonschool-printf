@@ -9,8 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0, lenght = 0;
-	char *str;
+	int lenght = 0;
 
 	if (!format)
 	{
@@ -19,30 +18,40 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	while (format[i])
+	while (*format)
 	{
-		if (format[i] == 'c')
+		if (*format == '%')
 		{
-			// Function for the character
+			format++;
+
+			if (*format == 'c')
+			{
+
+			}
+			else if (*format == 's')
+			{
+
+			}
+			else if (*format == '%')
+			{
+
+			}
+			else if (*format == 'd' || *format == 'i')
+			{
+				print_number(va_arg(args, int));
+			}
+			else
+			{
+				_putchar('%');
+				_putchar(*format);
+			}
 		}
-		else if (format[i] == 's')
+		else
 		{
-			// Function for the chain
-		}
-		else if (format[i] == '%')
-		{
-			// Function for the %
-		}
-		else if (format[i] == 'd')
-		{
-			// Function for the decimal
-		}
-		else if (format[i] == 'i')
-		{
-			// Function for the i
+			_putchar(*format);
 		}
 
-		i++;
+		format++;
 	}
 
 	va_end(args);
