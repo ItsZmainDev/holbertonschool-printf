@@ -33,35 +33,3 @@ void print_number(int n)
         _putchar(buffer[i]);
     }
 }
-
-/**
-* _printf - Imitate printf by handling %d and %i.
-*@format: The format string.
-* Return: Number of characters printed.
-*/
-int _print(const char *format, ...)
-{
-    va_list args;
-    int i = 0, count = 0;
-
-    if (!format)
-        return(-1);
-
-    va_start(args, format);
-    while (format[i])
-    {
-        if (format [i] == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
-        {
-            print_number(va_arg(args, int));
-            i++;
-        }
-        else
-        {
-            _putchar(format[i]);
-        }
-        i++;
-    }
-
-    va_end(args);
-    return (count);
-}
