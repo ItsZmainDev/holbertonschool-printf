@@ -4,21 +4,23 @@
 /**
 * print_number - Prints an integer using write.
 *@n: The integer to dispay.
+* Return: The length of the printed number.
 */
-void print_number(int n)
+int print_number(int n)
 {
 	char buffer[12];
-	int i = 0, temp = n;
+	int i = 0, temp = n, length = 0;
 
 	if (n == 0)
 	{
 		_putchar('0');
-		return;
+		return (1);
 	}
 
 	if (n < 0)
 	{
 		_putchar('-');
+		length++;
 		temp = -n;
 	}
 
@@ -28,8 +30,12 @@ void print_number(int n)
 		temp /= 10;
 	}
 
+	length += i;
+
 	while (i--)
 	{
 		_putchar(buffer[i]);
 	}
+
+	return (length);
 }

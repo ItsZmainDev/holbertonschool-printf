@@ -26,7 +26,7 @@ int handle_format(const char *format, va_list args)
 	}
 	else if (*format == 'd' || *format == 'i')
 	{
-		print_number(va_arg(args, int));
+		result += print_number(va_arg(args, int));
 	}
 	else
 	{
