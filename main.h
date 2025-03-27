@@ -13,4 +13,6 @@ int printf_char(int c);
 
 int printf_percent(void);
 
+int printf_binary(unsigned int n);
+
 #endif

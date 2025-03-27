@@ -28,6 +28,10 @@ int handle_format(const char *format, va_list args)
 	{
 		result += print_number(va_arg(args, int));
 	}
+	else if (*format == 'b')
+	{
+		result += printf_binary(va_arg(args, int));
+	}
 	else
 	{
 		result += _putchar('%');
