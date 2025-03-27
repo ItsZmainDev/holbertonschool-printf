@@ -17,6 +17,15 @@ int print_number(int n)
 		return (1);
 	}
 
+	if (n == INT_MIN)
+	{
+		_putchar('-');
+		length++;
+		_putchar('2');
+		length;
+		n = 147483648;
+	}
+
 	if (n < 0)
 	{
 		_putchar('-');
