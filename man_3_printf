@@ -1,0 +1,44 @@
+.TH _PRINTF "27 March 2025" "1.0" "Holberton School" "Holberton School _printf"
+.SH NAME
+_printf \- print formatted output
+.SH SYNOPSIS
+.nf
+#include "holberton.h"
+
+int _printf(const char *format, ...);
+.fi
+.SH DESCRIPTION
+The \fB_printf\fP function produces output according to a format string. It writes the output to the standard output stream (stdout). The format string can include format specifiers, which are replaced by the values provided as additional arguments.
+
+Supported format specifiers include:
+.TP
+\fB%c\fP
+Prints a single character.
+.TP
+\fB%s\fP
+Prints a string of characters.
+.TP
+\fB%d\fP, \fBi\fP
+Prints a signed decimal integer.
+.TP an unsigned hexadecimal integer (lowercase or uppercase).
+.TP
+\fB%%\fP
+Prints a literal percent sign.
+
+.SH RETURN VALUE
+The \fB_printf\fP function returns the total number of characters written, excluding the null byte used to end output to strings. If an error occurs, a negative value is returned.
+
+.SH EXAMPLES
+.B Example usage:
+.nf
+#include "holberton.h"
+
+int main(void)
+{
+    _printf("Hello, %s! You are %d years old.\n", "Holberton", 21);
+    return (0);
+}
+.fi
+
+.SH SEE ALSO
+\fBprintf\fP(3), \fBfprintf\fP(3), \fBsprintf\fP(3)
