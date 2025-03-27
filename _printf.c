@@ -28,14 +28,10 @@ int handle_format(const char *format, va_list args)
 	{
 		print_number(va_arg(args, int));
 	}
-	else if (*format == '\0')
-	{
-		result = -1;
-	}
 	else
 	{
-		_putchar('%');
-		_putchar(*format);
+		result += _putchar('%');
+		result += _putchar(*format);
 	}
 
 	return (result);
