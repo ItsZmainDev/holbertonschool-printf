@@ -8,15 +8,5 @@
  */
 int printf_char(int c)
 {
-	int length = 0;
-
-	if (c == '\0')
-	{
-		_putchar('\n');
-		return (-1);
-	}
-
-	length += _putchar(c);
-
-	return (length);
+	return (_putchar(c));
 }
