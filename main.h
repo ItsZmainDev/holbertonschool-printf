@@ -11,4 +11,6 @@ int printf_str(char *str);
 
 int printf_char(int c);
 
+int printf_percent(void);
+
 #endif

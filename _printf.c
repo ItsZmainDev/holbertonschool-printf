@@ -22,7 +22,7 @@ int handle_format(const char *format, va_list args)
 	}
 	else if (*format == '%')
 	{
-		result += _putchar('%');
+		result += printf_percent();
 	}
 	else if (*format == 'd' || *format == 'i')
 	{
