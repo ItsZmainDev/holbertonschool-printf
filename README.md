@@ -10,6 +10,7 @@
 - [Compilation](#compilation)
 - [Output](#output)
 - [Return](#return)
+- [Flowchart](#flowchart)
 - [Authors](#authors)
 
 #
@@ -17,6 +18,10 @@
 ##### Description
 
 This project is about creating a `printf` function that will be able to print any string with the correct format.
+
+#### Version
+
+- `1.0.0` - *Initial Release* - 2025-03-27
 
 #
 
