@@ -15,7 +15,7 @@
 
 #
 
-##### Description
+#### Description
 
 This project is about creating a `printf` function that will be able to print any string with the correct format.
 
@@ -33,8 +33,9 @@ This project is about creating a `printf` function that will be able to print an
 | `_printf.c` | Main function | [_printf.c](./_printf.c) |
 | `printf_char.c` | Function to print a character | [printf_char.c](./printf_char.c) |
 | `printf_str.c` | Function to print a string | [printf_str.c](./printf_str.c) |
+| `printf_percent.c` | Function to print a percent sign | [printf_percent.c](./printf_percent.c) |
 | `printf_int.c` | Function to print an integer | [printf_int.c](./printf_int.c) |
-
+| `printf_binary.c` | Function to print a binary number | [printf_binary.c](./printf_binary.c) |
 
 #### Formats
 
@@ -45,6 +46,7 @@ This project is about creating a `printf` function that will be able to print an
 | `%%` | Percent sign | ```c printf("%%");``` | % |
 | `%d` | Integer | ```c printf("%d", 100);``` | 100 |
 | `%i` | Integer | ```c printf("%i", 100);``` | 100 |
+| `%b` | Integer | ```c printf("%b", 98);``` | 1100010 |
 
 #### Prototype
 
@@ -85,7 +87,6 @@ Length: 14
 
 - On success, the total number of characters written is returned.
 - On error, a negative number is returned.
-
 
 #### Flowchart
 
