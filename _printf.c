@@ -10,33 +10,35 @@
  */
 int handle_format(const char *format, va_list args)
 {
-	int length = 0;
+	int result = 0;
 
 	if (*format == 'c')
 	{
-		length += printf_char(va_arg(args, int));
+		result += printf_char(va_arg(args, int));
 	}
 	else if (*format == 's')
 	{
-		length += printf_str(va_arg(args, char *));
+		result += printf_str(va_arg(args, char *));
 	}
 	else if (*format == '%')
 	{
-		length += _putchar('%');
+		result += _putchar('%');
 	}
 	else if (*format == 'd' || *format == 'i')
 	{
 		print_number(va_arg(args, int));
 	}
+	else if (*format == '\0')
+	{
+		result = -1
+	}
 	else
 	{
 		_putchar('%');
 		_putchar(*format);
-
-		length = 1;
 	}
 
-	return (length);
+	return (result);
 }
 
 /**
