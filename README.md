@@ -1,8 +1,35 @@
-# printf
+# printf - Custom printf function
+
+#### Table of Contents
+
+- [Description](#description)
+- [Files](#files)
+- [Formats](#formats)
+- [Prototype](#prototype)
+- [Example](#example)
+- [Compilation](#compilation)
+- [Output](#output)
+- [Return](#return)
+- [Authors](#authors)
+
+#
 
 ##### Description
 
-This project is about creating a printf function that will be able to print any string with the correct format.
+This project is about creating a `printf` function that will be able to print any string with the correct format.
+
+#
+
+#### Files
+
+| File | Description | Link |
+| ---- | ----------- | ---- |
+| `main.h` | Header file with prototypes | [main.h](./main.h) |
+| `_printf.c` | Main function | [_printf.c](./_printf.c) |
+| `printf_char.c` | Function to print a character | [printf_char.c](./printf_char.c) |
+| `printf_str.c` | Function to print a string | [printf_str.c](./printf_str.c) |
+| `printf_int.c` | Function to print an integer | [printf_int.c](./printf_int.c) |
+
 
 #### Formats
 
@@ -13,17 +40,6 @@ This project is about creating a printf function that will be able to print any 
 | `%%` | Percent sign | ```c printf("%%");``` | % |
 | `%d` | Integer | ```c printf("%d", 100);``` | 100 |
 | `%i` | Integer | ```c printf("%i", 100);``` | 100 |
-
-#### Files
-
-| File | Description |
-| ---- | ----------- |
-| `main.h` | Header file with prototypes |
-| `_printf.c` | Main function |
-| `printf_char.c` | Function to print a character |
-| `printf_str.c` | Function to print a string |
-| `printf_int.c` | Function to print an integer |
-
 
 #### Prototype
 
@@ -63,6 +79,14 @@ Length: 14
 #### Return
 
 - On success, the total number of characters written is returned.
+- On error, a negative number is returned.
+
+
+#### Flowchart
+
+![Flowchart](./flowchart.png)
+
+#
 
 #### Authors &copy;
 
