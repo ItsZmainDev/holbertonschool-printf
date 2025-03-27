@@ -12,27 +12,29 @@ int handle_format(const char *format, va_list args)
 {
 	int length = 0;
 
-		if (*format == 'c')
-		{
-			length += printf_char(va_arg(args, int));
-		}
-		else if (*format == 's')
-		{
-			length += printf_str(va_arg(args, char *));
-		}
-		else if (*format == '%')
-		{
-			length += _putchar('%');
-		}
-		else if (*format == 'd' || *format == 'i')
-		{
-			print_number(va_arg(args, int));
-		}
-		else
-		{
-			_putchar('%');
-			_putchar(*format);
-		}
+	if (*format == 'c')
+	{
+		length += printf_char(va_arg(args, int));
+	}
+	else if (*format == 's')
+	{
+		length += printf_str(va_arg(args, char *));
+	}
+	else if (*format == '%')
+	{
+		length += _putchar('%');
+	}
+	else if (*format == 'd' || *format == 'i')
+	{
+		print_number(va_arg(args, int));
+	}
+	else
+	{
+		_putchar('%');
+		_putchar(*format);
+
+		length = 1;
+	}
 
 	return (length);
 }
