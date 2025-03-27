@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <limits.h>
 
 /**
 * print_number - Prints an integer using write.
@@ -22,7 +23,7 @@ int print_number(int n)
 		_putchar('-');
 		length++;
 		_putchar('2');
-		length;
+		length++;
 		n = 147483648;
 	}
 
