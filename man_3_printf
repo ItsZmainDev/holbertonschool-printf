@@ -24,6 +24,8 @@ Prints a signed decimal integer.
 .TP
 \fB%%\fP
 Prints a literal percent sign.
+\fB%b\fP
+Prints a binary representation of an unsigned integer.
 
 .SH RETURN VALUE
 The \fB_printf\fP function returns the total number of characters written, excluding the null byte used to end output to strings. If an error occurs, a negative value is returned.
