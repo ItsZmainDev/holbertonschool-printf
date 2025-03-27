@@ -42,5 +42,6 @@ int main(void)
     /* printf("Unknown:[%r]\n"); */
 
     _printf("%c", '\0');
+    _printf("%b\n", 98);
     return (0);
 }
