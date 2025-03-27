@@ -30,7 +30,7 @@ int handle_format(const char *format, va_list args)
 	}
 	else if (*format == '\0')
 	{
-		return (-1);
+		result = -1;
 	}
 	else
 	{
@@ -49,7 +49,7 @@ int handle_format(const char *format, va_list args)
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int length = 0;
+	int result = 0;
 
 	if (format == NULL)
 		return (-1);
@@ -61,15 +61,20 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			length += handle_format(format, args);
+			if (*format == '\0')
+			{
+				result = -1;
+				break;
+			}
+			result += handle_format(format, args);
 		}
 		else
 		{
-			length += _putchar(*format);
+			result += _putchar(*format);
 		}
 		format++;
 	}
 
 	va_end(args);
-	return (length);
+	return (result);
 }
