@@ -3,24 +3,14 @@
 #include <stddef.h>
 
 /**
- * _printf - Function that produces output according to a format.
+ * handle_format - Function that handles the format specifiers
  * @format: Format to print
+ * @args: Arguments to print
  * Return: Number of characters printed
  */
-int _printf(const char *format, ...)
+int handle_format(const char *format, va_list args)
 {
-	va_list args;
 	int length = 0;
-
-	if (format == NULL)
-		return (-1);
-
-	va_start(args, format);
-
-	while (*format)
-	if (*format == '%')
-	{
-		format++;
 
 		if (*format == 'c')
 		{
@@ -43,9 +33,38 @@ int _printf(const char *format, ...)
 			_putchar('%');
 			_putchar(*format);
 		}
-	}
 
-	format++;
+	return (length);
+}
+
+/**
+ * _printf - Function that produces output according to a format.
+ * @format: Format to print
+ * Return: Number of characters printed
+ */
+int _printf(const char *format, ...)
+{
+	va_list args;
+	int length = 0;
+
+	if (format == NULL)
+		return (-1);
+
+	va_start(args, format);
+
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			format++;
+			length += handle_format(format, args);
+		}
+		else
+		{
+			length += _putchar(*format);
+		}
+		format++;
+	}
 
 	va_end(args);
 	return (length);
