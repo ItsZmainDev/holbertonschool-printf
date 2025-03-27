@@ -30,7 +30,7 @@ int handle_format(const char *format, va_list args)
 	}
 	else if (*format == '\0')
 	{
-		result = -1;
+		return (-1);
 	}
 	else
 	{
