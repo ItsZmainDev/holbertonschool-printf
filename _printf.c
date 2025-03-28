@@ -78,7 +78,5 @@ int _printf(const char *format, ...)
 
 	va_end(args);
 
-	_putchar_flush();
-
 	return (result);
 }
