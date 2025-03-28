@@ -26,6 +26,14 @@ Prints a signed decimal integer.
 Prints a literal percent sign.
 \fB%b\fP
 Prints a binary representation of an unsigned integer.
+\fB%u\fP
+Prints an unsigned decimal integer.
+\fB%o\fP
+Prints an unsigned octal integer.
+\fB%x\fP
+Prints an unsigned hexadecimal integer (lowercase).
+\fB%X\fP
+Prints an unsigned hexadecimal integer (uppercase).
 
 .SH RETURN VALUE
 The \fB_printf\fP function returns the total number of characters written, excluding the null byte used to end output to strings. If an error occurs, a negative value is returned.

@@ -36,6 +36,10 @@ This project is about creating a `printf` function that will be able to print an
 | `printf_percent.c` | Function to print a percent sign | [printf_percent.c](./printf_percent.c) |
 | `printf_int.c` | Function to print an integer | [printf_int.c](./printf_int.c) |
 | `printf_binary.c` | Function to print a binary number | [printf_binary.c](./printf_binary.c) |
+| `printf_udecimal.c` | Function to print an unsigned decimal number | [printf_udecimal.c](./printf_udecimal.c) |
+| `printf_octal.c` | Function to print an octal number | [printf_octal.c](./printf_octal.c) |
+| `printf_hex_lowercase.c` | Function to print a hexadecimal number in lowercase | [printf_hex_lowercase.c](./printf_hex_lowercase.c) |
+| `printf_hex_uppercase.c` | Function to print a hexadecimal number in uppercase | [printf_hex_uppercase.c](./printf_hex_uppercase.c) |
 
 #### Formats
 
@@ -47,6 +51,10 @@ This project is about creating a `printf` function that will be able to print an
 | `%d` | Integer | ```c printf("%d", 100);``` | 100 |
 | `%i` | Integer | ```c printf("%i", 100);``` | 100 |
 | `%b` | Integer | ```c printf("%b", 98);``` | 1100010 |
+| `%u` | Unsigned decimal | ```c printf("%u", 100);``` | 100 |
+| `%o` | Octal | ```c printf("%o", 100);``` | 144 |
+| `%x` | Hexadecimal | ```c printf("%x", 100);``` | 64 |
+| `%X` | Hexadecimal | ```c printf("%X", 100);``` | 64 |
 
 #### Prototype
 

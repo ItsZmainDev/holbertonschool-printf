@@ -15,4 +15,12 @@ int printf_percent(void);
 
 int printf_binary(unsigned int n);
 
+int print_unsigned_decimal(unsigned int n);
+
+int print_octal(unsigned int n);
+
+int print_hex_lowercase(unsigned int n);
+
+int print_hex_uppercase(unsigned int n);
+
 #endif

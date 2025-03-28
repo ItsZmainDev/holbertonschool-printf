@@ -1,7 +1,36 @@
 #include "main.h"
-#include "buffer.h"
 #include <stdarg.h>
 #include <stddef.h>
+
+/**
+ * handle_format_conversion - Function that handles the format specifiers
+ * @format: Format to print
+ * @args: Arguments to print
+ * Return: Number of characters printed
+ */
+int handle_format_conversion(const char *format, va_list args)
+{
+	int result = 0;
+
+	if (*format == 'u')
+	{
+		result += print_unsigned_decimal(va_arg(args, unsigned int));
+	}
+	else if (*format == 'o')
+	{
+		result += print_octal(va_arg(args, unsigned int));
+	}
+	else if (*format == 'x')
+	{
+		result += print_hex_lowercase(va_arg(args, unsigned int));
+	}
+	else if (*format == 'X')
+	{
+		result += print_hex_uppercase(va_arg(args, unsigned int));
+	}
+
+	return (result);
+}
 
 /**
  * handle_format - Function that handles the format specifiers
@@ -32,6 +61,10 @@ int handle_format(const char *format, va_list args)
 	else if (*format == 'b')
 	{
 		result += printf_binary(va_arg(args, int));
+	}
+	else if (*format == 'u' || *format == 'o' || *format == 'x' || *format == 'X')
+	{
+		result += handle_format_conversion(format, args);
 	}
 	else
 	{
