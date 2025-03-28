@@ -1,4 +1,5 @@
 #include "main.h"
+#include "buffer.h"
 #include <stdarg.h>
 #include <stddef.h>
 
@@ -76,5 +77,8 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(args);
+
+	_putchar_flush();
+
 	return (result);
 }
