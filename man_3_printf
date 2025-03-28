@@ -44,3 +44,8 @@ int main(void)
 
 .SH SEE ALSO
 \fBprintf\fP(3), \fBfprintf\fP(3), \fBsprintf\fP(3)
+
+...
+.SH AUTHORS
+Martin Clement, Terence Tengue
+...
