@@ -14,4 +14,8 @@ typedef struct buffer_s
 	int index;
 } buffer_t;
 
+int flush_buffer(buffer_t *buf);
+
+void add_to_buffer(buffer_t *buf, char c);
+
 #endif /* BUFFER_H */

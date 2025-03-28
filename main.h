@@ -2,6 +2,7 @@
 #define MAIN_H
 
 int _putchar(char c);
+int _putchar_flush(void);
 
 int _printf(const char *format, ...);
 
