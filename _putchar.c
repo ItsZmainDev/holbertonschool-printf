@@ -4,21 +4,22 @@
 #include "buffer.h"
 
 /**
-* flush_buffer - Écrit le contenu du tampon dans stdout et le vide
-* @buf: Pointeur sur le tampon
-* Return: number of characters
-*/
+ * flush_buffer - Vide le contenu du tampon sur stdout
+ * @buf: Pointeur sur le tampon
+ *
+ * Return: Le nombre de bytes écrits, ou -1 en cas d'erreur.
+ */
 int flush_buffer(buffer_t *buf)
 {
-	int count = 0;
+	int bytes_written = 0;
 
 	if (buf->index > 0)
 	{
-		count += write(1, buf->data, buf->index);
+		bytes_written += write(1, buf->data, buf->index);
 		buf->index = 0;
 	}
 
-	return (count);
+	return (bytes_written);
 }
 
 /**
@@ -29,23 +30,32 @@ int flush_buffer(buffer_t *buf)
 void add_to_buffer(buffer_t *buf, char c)
 {
 	if (buf->index >= BUFFER_SIZE)
+	{
 		flush_buffer(buf);
+	}
 
 	buf->data[buf->index++] = c;
 }
 
 /**
-* _putchar - writes the character c to stdout
-* @c: The character to print
-*
-* Return: On success 1.
-* On error, -1 is returned, and errno is set appropriately.
-*/
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success, the number of bytes written.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
 int _putchar(char c)
 {
-	buffer_t buf = {{0}, 0};
+	static buffer_t buf = {{0}, 0};
+	int result = 0;
 
 	add_to_buffer(&buf, c);
 
-	return (flush_buffer(&buf));
+	if (c == '\n' || buf.index >= BUFFER_SIZE)
+	{
+		result = flush_buffer(&buf);
+	}
+
+
+	return (result);
 }
